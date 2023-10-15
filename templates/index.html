@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Movie Rating Prediction</title>
+    <style>
+        .page {
+            display: none;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .active {
+            display: block;
+        }
+
+        .page2 {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page" id="page1">
+        <h1>Let's rate the movie</h1>
+        <p>Get ready for the next step...</p>
+    </div>
+
+    <div class="page page2" id="page2">
+        <h1>Movie Rating Prediction</h1>
+        <form id="ratingForm" action="/predict" method="post">
+            
+            <div class="input-field">
+                <label for="Duration(minutes)">Duration (minutes):</label><br>
+                <input type="text" name="Duration(minutes)" required>
+            </div>
+            
+            <div class="input-field">
+                <label for="Year">Year:</label><br>
+                <input type="text" name="Year" required>
+            </div>
+            <div class="input-field">
+                <label for="Votes">Votes:</label><br>
+                <input type="text" name="Votes" required>
+            </div>
+            <input type="submit" value="Predict Rating">
+        </form>
+    </div>
+
+    <script>
+        // Function to switch between pages
+        function switchPage(currentPage, nextPage, delay) {
+            setTimeout(function () {
+                document.getElementById(currentPage).classList.remove('active');
+                document.getElementById(nextPage).classList.add('active');
+            }, delay);
+        }
+
+        // Initially show page 1
+        document.getElementById('page1').classList.add('active');
+
+        // After 5 seconds, switch to page 2
+        switchPage('page1', 'page2', 5000);
+    </script>
+</body>
+
+</html>

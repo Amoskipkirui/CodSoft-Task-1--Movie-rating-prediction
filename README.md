@@ -1,6 +1,6 @@
 # Movie Rating Prediction Project
 
-![Movie Rating Prediction](images/26 Movie Categories That Are 100% Specific And 200% Amazing.jpeg)
+![Movie Rating Prediction](images/movie.jpeg)
 
 
 ## Table of Contents
